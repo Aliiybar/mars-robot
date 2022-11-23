@@ -5,12 +5,19 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "start": "node index.js"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "author": "Ali Iybar",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "babel-jest": "^29.2.2",
     "jest": "^29.3.1"
   }
 }

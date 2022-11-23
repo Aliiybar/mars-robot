@@ -9,5 +9,44 @@ describe("Rover movement tests", () => {
       const result = Move(plateau, commands);
       expect(result).toBe('3,1,North');
     })
-}) 
+    test("Given_TheCommandAs_RFF_When_ItMoves_Then_PositionShouldBe_1,3,East", () => {
+      const plateau = "5x5";
+      const commands = "RFF"
+
+      const result = Move(plateau, commands);
+      expect(result).toBe('1,3,East');
+    })
+    test("Given_TheCommandAs_RFLFFLF_When_ItMoves_Then_PositionShouldBe_3,1,West", () => {
+      const plateau = "5x5";
+      const commands = "RFLFFLF"
+
+      const result = Move(plateau, commands);
+      expect(result).toBe('3,1,West');
+    })
+  }) 
+
+  describe('Boundries', ()=> {
+    test("Given_TheCommandAs_FRFRFF_When_ItMoves_Then_PositionShouldBe_1,2,South", () => {
+      const plateau = "5x5";
+      const commands = "FRFRFF"
+
+      const result = Move(plateau, commands);
+      expect(result).toBe('1,2,South');
+    })
+    test("Given_TheCommandAs_FFFFFFFF_When_ItMoves_Then_PositionShouldNotBeOutOfBoundaries", () => {
+      const plateau = "5x5";
+      const commands = "FFFFFFFF"
+
+      const result = Move(plateau, commands);
+      expect(result).toBe('5,1,North');
+    })
+    test("Given_TheCommandAs_RFFFFFFFF_When_ItMoves_Then_PositionShouldNotBeOutOfBoundaries", () => {
+      const plateau = "5x5";
+      const commands = "RFFFFFFFF"
+
+      const result = Move(plateau, commands);
+      expect(result).toBe('1,5,East');
+    })
+
+  }) 
 })

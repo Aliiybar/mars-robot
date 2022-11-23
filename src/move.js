@@ -9,7 +9,6 @@ export default function Move(plateau, commands){
     const commandArray = commands.split('');
 
     commandArray.map(cmd => {
-        console.log("cmd : ", cmd)
         switch (cmd){
             case "F":
                 if(currentDirection === "North" && currentX < xMax)

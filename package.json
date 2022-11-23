@@ -1,0 +1,16 @@
+{
+  "name": "mars-robot",
+  "version": "1.0.0",
+  "description": "Mars robot kata",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "jest",
+    "start": "npm index.js"
+  },
+  "author": "Ali Iybar",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
